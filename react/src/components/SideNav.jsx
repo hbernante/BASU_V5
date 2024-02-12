@@ -9,11 +9,12 @@ import { Avatar, Box, Typography } from "@mui/material";
 import React from "react";
 import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
 
-function SideNav({sideNavExpanded}) {
+function SideNav({ sideNavExpanded }) {
   const theme = useTheme();
   return (
     <Sidebar
       collapsed={!sideNavExpanded}
+      toggled={sideNavExpanded}
       style={{
         height: "100%",
         top: "auto",
@@ -27,10 +28,14 @@ function SideNav({sideNavExpanded}) {
           alt="Avatar Name"
           src="src/assets/avatars/sample-avatar.jpg"
         />
-        <Typography variant="body2" sx={styles.yourChannel}>
-          Your Channel
-        </Typography>
-        <Typography variant="overline">Channel Name</Typography>
+        {sideNavExpanded ? (
+          <Typography variant="body2" sx={styles.yourChannel}>
+            Your Channel
+          </Typography>
+        ) : null}
+        {sideNavExpanded ? (
+          <Typography variant="overline">Channel Name</Typography>
+        ) : null}
       </Box>
       <Menu>
         <MenuItem active icon={<DashboardOutlined />}>
