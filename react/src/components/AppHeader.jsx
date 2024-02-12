@@ -11,11 +11,11 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 
-function AppHeader() {
+function AppHeader({sideNavExpanded, setSideNavExpanded}) {
   return (
     <AppBar position="sticky" sx={styles.appBar}>
       <Toolbar>
-        <IconButton onClick={() => console.log("clicked")} color="">
+        <IconButton onClick={() => sideNavExpanded ? setSideNavExpanded(false) : setSideNavExpanded(true)} color="secondary">
           <MenuTwoTone />
         </IconButton>
         <Box

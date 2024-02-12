@@ -1,5 +1,5 @@
 import { Box, CssBaseline, ThemeProvider, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -8,18 +8,18 @@ import "./App.css";
 import theme from "./config/theme";
 import SideNav from "./components/SideNav";
 import AppHeader from "./components/AppHeader";
-import { ProSidebarProvider } from "react-pro-sidebar";
 
 function App() {
+  const [sideNavExpanded, setSideNavExpanded] = useState(false)
   return (
     <React.Fragment>
       <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <AppHeader />
-          <Box sx={styles.container}>
-            <SideNav />
-            <Box component={"main"} sx={styles.mainSection}></Box>
-          </Box>
+        <CssBaseline />
+        <AppHeader setSideNavExpanded={setSideNavExpanded} sideNavExpanded={sideNavExpanded}/>
+        <Box sx={styles.container}>
+        <SideNav sideNavExpanded={sideNavExpanded}/>
+          <Box component={"main"} sx={styles.mainSection}></Box>
+        </Box>
       </ThemeProvider>
     </React.Fragment>
   );

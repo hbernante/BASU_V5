@@ -9,10 +9,11 @@ import { Avatar, Box, Typography } from "@mui/material";
 import React from "react";
 import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
 
-function SideNav() {
+function SideNav({sideNavExpanded}) {
   const theme = useTheme();
   return (
     <Sidebar
+      collapsed={!sideNavExpanded}
       style={{
         height: "100%",
         top: "auto",
