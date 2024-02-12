@@ -1,0 +1,22 @@
+Reservation System
+
+1. Admin create a reservation
+	- Forms
+	- Calendar
+	- Shuttle Vehicle List
+
+2. Admin Check Reservation Inquiry
+	- Check Reservation Inquiry
+	- Accept Inquiry
+	- Decline Inquiry
+	- Update Calendar
+
+3. Admin Check List of Reservation Logs
+	- Check Shuttle Logs
+	- Print Shuttle Logs
+
+4. Admin/System Update Shuttle Vehicle Storage and Status
+	- Insert Shuttles
+	- Delete Shuttles
+	- Update Shuttles
+
