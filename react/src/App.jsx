@@ -8,17 +8,27 @@ import "./App.css";
 import theme from "./config/theme";
 import SideNav from "./components/SideNav";
 import AppHeader from "./components/AppHeader";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./router/AppRoutes";
 
 function App() {
-  const [sideNavExpanded, setSideNavExpanded] = useState(false)
+  const [sideNavExpanded, setSideNavExpanded] = useState(false);
   return (
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <AppHeader setSideNavExpanded={setSideNavExpanded} sideNavExpanded={sideNavExpanded}/>
+        <AppHeader
+          setSideNavExpanded={setSideNavExpanded}
+          sideNavExpanded={sideNavExpanded}
+        />
         <Box sx={styles.container}>
-        <SideNav sideNavExpanded={sideNavExpanded}/>
-          <Box component={"main"} sx={styles.mainSection}></Box>
+          <BrowserRouter>
+            <SideNav sideNavExpanded={sideNavExpanded} />
+            <Box component={"main"} sx={styles.mainSection}>
+              <AppRoutes />
+
+            </Box>
+          </BrowserRouter>
         </Box>
       </ThemeProvider>
     </React.Fragment>
