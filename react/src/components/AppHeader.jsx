@@ -15,7 +15,7 @@ function AppHeader() {
   return (
     <AppBar position="sticky" sx={styles.appBar}>
       <Toolbar>
-        <IconButton onClick={() => console.log("clicked")} color="black">
+        <IconButton onClick={() => console.log("clicked")} color="">
           <MenuTwoTone />
         </IconButton>
         <Box
@@ -23,15 +23,16 @@ function AppHeader() {
           sx={styles.appLogo}
           src="/src/assets/sample-logo.png"
         />
-        <IconButton title="Notifications" color="main">
+        <Box sx={{ flexGrow: 1 }} />
+        <IconButton title="Notifications" color="">
           <Badge badgeContent={14} color="error">
             <NotificationsIcon />
           </Badge>
         </IconButton>
-        <IconButton title="Settings" color="main">
+        <IconButton title="Settings" color="">
           <SettingsIcon />
         </IconButton>
-        <IconButton title="Signout" color="main">
+        <IconButton title="Signout" color="">
           <LogoutIcon />
         </IconButton>
       </Toolbar>
@@ -42,7 +43,7 @@ function AppHeader() {
 /** @type {import("@mui/material").SxProps} */
 const styles = {
   appBar: {
-    bgcolor: "light-blue",
+    bgcolor: "neutral.main",
   },
   appLogo: {
     borderRadius: 2,

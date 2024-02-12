@@ -8,17 +8,18 @@ import "./App.css";
 import theme from "./config/theme";
 import SideNav from "./components/SideNav";
 import AppHeader from "./components/AppHeader";
+import { ProSidebarProvider } from "react-pro-sidebar";
 
 function App() {
   return (
     <React.Fragment>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <AppHeader />
-        <Box sx={styles.container}>
-          <SideNav />
-          <Box component={"main"} sx={styles.mainSection}></Box>
-        </Box>
+          <CssBaseline />
+          <AppHeader />
+          <Box sx={styles.container}>
+            <SideNav />
+            <Box component={"main"} sx={styles.mainSection}></Box>
+          </Box>
       </ThemeProvider>
     </React.Fragment>
   );
@@ -27,16 +28,16 @@ function App() {
 /** @type {import("@mui/material").SxProps} */
 const styles = {
   container: {
-    display: 'flex',
-    bgcolor: 'neutral.light',
-    height: 'calc(100% - 64px)'
+    display: "flex",
+    bgcolor: "neutral.light",
+    height: "calc(100% - 64px)",
   },
   mainSection: {
     p: 1,
-    width: '100%',
-    height: '100%',
-    overflow: 'auto',
-  }
+    width: "100%",
+    height: "100%",
+    overflow: "auto",
+  },
 };
 
 export default App;
