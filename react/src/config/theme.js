@@ -16,6 +16,7 @@ let theme = createTheme({
     medium: grey[200],
     normal: grey[700],
     main: grey[900],
+    highlight: grey[400],
   },
   green: {
     main: green[800],
