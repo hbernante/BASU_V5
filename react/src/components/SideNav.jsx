@@ -24,7 +24,7 @@ function SideNav({ sideNavExpanded }) {
         top: "auto",
       }}
       breakPoint="md"
-      //backgroundColor={theme.palette.neutral.light}
+      backgroundColor={theme.palette.neutral.light}
     >
       <Box sx={styles.avatarContainer}>
         <Avatar
@@ -45,13 +45,16 @@ function SideNav({ sideNavExpanded }) {
         menuItemStyles={{
           button: ({active}) => {
             return {
-              backgroundColor: active? theme.neutral.highlight: undefined
+              backgroundColor: active? theme.palette.neutral.highlight: undefined
             }
           }
         }}
       >
         <MenuItem active={location.pathname === "/"} component={<Link to="/"/>} icon={<DashboardOutlined />}>
           <Typography variant="body2">Dashboard</Typography>
+        </MenuItem>
+        <MenuItem active={location.pathname === "/reservation"} component={<Link to="/reservation"/>} icon={<StyleOutlined />}>
+          <Typography variant="body2">Reservation</Typography>
         </MenuItem>
         <MenuItem active={location.pathname === "/content"} component={<Link to="/content"/>} icon={<SourceOutlined />}>
           <Typography variant="body2">Content</Typography>
